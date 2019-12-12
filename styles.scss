@@ -1,3 +1,5 @@
+// Theme colors
+
 $red: #D95D41;
 $orange: #F28444;
 $yellow: #F2DDB6;
@@ -5,30 +7,44 @@ $grey: #D9CEB0;
 $blue: #85A2A6;
 $blue-darkened: #5C7B7F;
 
+$timing: .2s ease-in-out;
+
+$tiny: 4px;
+$xsmall: 8px;
+$small: 12px;
+$medium: 24px;
+$large: 36px;
+
+$icon-size: $medium;
+
+$header-text: 'Concert One', sans-serif;
+$subhead-text: 'Dosis', sans-serif;
+$body-text: 'Open Sans', sans-serif;
+
+
+
+
+// Global styles
+
 * {
 	margin: 0;
 	padding: 0;
 }
-
-.light-mode { .dark { display: none; } }
-.dark-mode { .light { display: none; } }
-
-/*::selection,
-::-moz-selection {
-	background: $blue;
-}*/
 
 html, body {
 	height: 100%;
 	width: 100%;
 }
 
+// For switching between light / dark mode
+.light-mode { .dark { display: none; } }
+.dark-mode { .light { display: none; } }
+
 body {
 	display: flex;
 	flex-direction: column;
-	font-family: 'Open Sans', sans-serif;
-	min-height: 100vh;
-	transition: all .2s ease-in-out;
+	font-family: $body-text;
+	transition: all $timing; // For switching between dark/light mode
 }
 
 header {
@@ -36,8 +52,8 @@ header {
 	background-color: $yellow;
 	display: flex;
 	justify-content: space-between;
-	padding: 12px 24px;
-	transition: all .2s ease-in-out;
+	padding: $small $medium;
+	transition: all $timing; // For switching between dark/light mode
 
 	.logo img {
 		height: 50px;
@@ -46,104 +62,64 @@ header {
 	nav {
 		display: flex;
 
-		a { text-decoration: none; }
-		a, a:visited { color: black; }
+		a, a:visited { 
+			color: black; 
+			text-decoration: none;
+		}
 
 		.option {
-			margin: 0 8px;
+			margin: 0 $xsmall;
+		}
+
+		.option a::after {
+			content: "";
+			display: block;
+			height: 6px;
+			width: 100%;
 		}
 
 		.option:hover a:not(.current)::after {
 			background-color: white;
-			content: "";
-			display: block;
-			height: 6px;
-			width: 100%;
 		}
 
 		.current::after {
 			background-color: $red;
-			content: "";
-			display: block;
-			height: 6px;
-			width: 100%;
 		}
 	}
 }
 
 .container {
-	align-items: center;
-	display: flex;
-	flex: 1;
-	flex-direction: column;
-	justify-content: center;
-	width: 100%;
-
-	.intro {
-		color: $blue-darkened;
-		font-family: 'Concert One', sans-serif;
-		font-size: 28px;
-		margin-bottom: 8px;
-		text-transform: uppercase;
-	}
-
-	.name {
-		width: 500px;
-	}
-
-	.job {
-		font-family: 'Dosis', sans-serif;
-		font-size: 28px;
-		letter-spacing: .2em;
-	}
-
-	.bio  {
-		margin-top: 36px;
-		text-align: justify;
-		width: 500px;
-	}
+	flex: 1; // Pushes footer to bottom of page
 }
 
 footer {
 	border-top: 1px $grey solid;
 	display: flex;
 	justify-content: space-between;
-	padding: 24px 12px;
+	padding: $medium $small;
+
+	img {
+		height: $icon-size;
+		width: $icon-size;
+	}
 
 	.copy {
 		display: inline-block;
 		font-weight: bold;
-		margin-right: 4px;
+		margin-right: $tiny;
 	}
 
-	.moon,
-	.sun {
+	.moon, .sun {
 		cursor: pointer;
-
-		img {
-			height: 24px;
-			width: 24px;
-		}
 	}
 
-	.soc-med {
-		display: flex;
-
-		a {
-			display: inline-block;
-			margin-left: 12px;
-		}
-		
-		img {
-			height: 24px;
-			width: 24px;
-		}
+	.soc-med a {
+		display: inline-block;
+		margin-left: $small;
 	}
 }
 
-
-
-// Dark Mode
+// Dark mode - Global
 
 .dark-mode {
 	color: white;
@@ -165,17 +141,52 @@ footer {
 		}
 	}
 
-	.container {
-		.intro,
-		h1 {
-			color: $blue;
-		}
-	}
-
 	footer {
 		border-color: $blue;
 	}
 }
+
+
+
+
+// Home
+
+.home {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+
+	.intro {
+		color: $blue-darkened;
+		font: 28px $header-text;
+		margin-bottom: $small;
+		text-transform: uppercase;
+	}
+
+	.name {
+		width: 500px;
+	}
+
+	.job {
+		font: 28px $subhead-text;
+		letter-spacing: .2em;
+	}
+
+	.bio  {
+		margin-top: $large;
+		text-align: justify;
+		width: 500px;
+	}
+}
+
+// Dark mode - Home
+
+.dark-mode {
+	.intro { color: $blue; }
+}
+
 
 
 
@@ -190,6 +201,17 @@ footer {
 		text-transform: uppercase;
 	}
 }
+
+// Dark mode - Projects
+
+.dark-mode {
+	h1 { color: $blue; }
+}
+
+
+
+
+// About
 
 .about {
 	flex-direction: row;

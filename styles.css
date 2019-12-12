@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 .light-mode .dark {
   display: none;
 }
@@ -11,20 +16,10 @@
   display: none;
 }
 
-/*::selection,
-::-moz-selection {
-	background: $blue;
-}*/
-html, body {
-  height: 100%;
-  width: 100%;
-}
-
 body {
   display: flex;
   flex-direction: column;
   font-family: "Open Sans", sans-serif;
-  min-height: 100vh;
   transition: all 0.2s ease-in-out;
 }
 
@@ -42,57 +37,28 @@ header .logo img {
 header nav {
   display: flex;
 }
-header nav a {
-  text-decoration: none;
-}
 header nav a, header nav a:visited {
   color: black;
+  text-decoration: none;
 }
 header nav .option {
   margin: 0 8px;
 }
-header nav .option:hover a:not(.current)::after {
-  background-color: white;
+header nav .option a::after {
   content: "";
   display: block;
   height: 6px;
   width: 100%;
+}
+header nav .option:hover a:not(.current)::after {
+  background-color: white;
 }
 header nav .current::after {
   background-color: #D95D41;
-  content: "";
-  display: block;
-  height: 6px;
-  width: 100%;
 }
 
 .container {
-  align-items: center;
-  display: flex;
   flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-}
-.container .intro {
-  color: #5C7B7F;
-  font-family: "Concert One", sans-serif;
-  font-size: 28px;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-}
-.container .name {
-  width: 500px;
-}
-.container .job {
-  font-family: "Dosis", sans-serif;
-  font-size: 28px;
-  letter-spacing: 0.2em;
-}
-.container .bio {
-  margin-top: 36px;
-  text-align: justify;
-  width: 500px;
 }
 
 footer {
@@ -101,30 +67,21 @@ footer {
   justify-content: space-between;
   padding: 24px 12px;
 }
+footer img {
+  height: 24px;
+  width: 24px;
+}
 footer .copy {
   display: inline-block;
   font-weight: bold;
   margin-right: 4px;
 }
-footer .moon,
-footer .sun {
+footer .moon, footer .sun {
   cursor: pointer;
-}
-footer .moon img,
-footer .sun img {
-  height: 24px;
-  width: 24px;
-}
-footer .soc-med {
-  display: flex;
 }
 footer .soc-med a {
   display: inline-block;
   margin-left: 12px;
-}
-footer .soc-med img {
-  height: 24px;
-  width: 24px;
 }
 
 .dark-mode {
@@ -143,12 +100,38 @@ footer .soc-med img {
 .dark-mode header nav .current::after {
   background-color: #85A2A6;
 }
-.dark-mode .container .intro,
-.dark-mode .container h1 {
-  color: #85A2A6;
-}
 .dark-mode footer {
   border-color: #85A2A6;
+}
+
+.home {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.home .intro {
+  color: #5C7B7F;
+  font: 28px "Concert One", sans-serif;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.home .name {
+  width: 500px;
+}
+.home .job {
+  font: 28px "Dosis", sans-serif;
+  letter-spacing: 0.2em;
+}
+.home .bio {
+  margin-top: 36px;
+  text-align: justify;
+  width: 500px;
+}
+
+.dark-mode .intro {
+  color: #85A2A6;
 }
 
 .projects {
@@ -158,6 +141,10 @@ footer .soc-med img {
   color: #5C7B7F;
   font-family: "Concert One", sans-serif;
   text-transform: uppercase;
+}
+
+.dark-mode h1 {
+  color: #85A2A6;
 }
 
 .about {
