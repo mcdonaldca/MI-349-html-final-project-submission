@@ -171,13 +171,76 @@ footer .soc-med a:first-of-type {
 }
 
 .projects {
-  max-width: 750px;
-  padding: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 .projects h1 {
   color: #5C7B7F;
   font-family: "Concert One", sans-serif;
+  margin-bottom: 8px;
   text-transform: uppercase;
+}
+.projects .project-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+@media all and (max-width: 400px) {
+  .projects .project-list {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.projects .project {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 12px;
+}
+.projects .project .preview {
+  height: 150px;
+  margin-bottom: 6px;
+  position: relative;
+  width: 150px;
+}
+.projects .project .preview .frame {
+  position: absolute;
+  border: 2px solid black;
+  height: 146px;
+  width: 146px;
+  z-index: 1;
+}
+.projects .project .preview img {
+  background-color: #F2DDB6;
+  height: 100%;
+  left: 6px;
+  position: relative;
+  top: 6px;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+.projects .project .title {
+  font: 18px "Dosis", sans-serif;
+  width: fit-content;
+}
+.projects .project .title:after {
+  background-color: #F2DDB6;
+  content: "";
+  display: block;
+  height: 10px;
+  margin-left: -2px;
+  margin-top: -9px;
+  transition: all 0.2s ease-in-out;
+  width: calc(100% + 4px);
+}
+.projects .project:hover .preview img {
+  left: 0;
+  top: 0;
+}
+.projects .project:hover .title:after {
+  background-color: #D9CEB0;
 }
 
 .dark-mode h1 {

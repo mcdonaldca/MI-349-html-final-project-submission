@@ -23,6 +23,7 @@ $body-text: 'Open Sans', sans-serif;
 
 $small-screen-bp: 500px;
 $stack-controls-bp: 360px;
+$center-projects-bp: 400px;
 
 
 
@@ -235,13 +236,91 @@ footer {
 // Projects
 
 .projects {
-	max-width: 750px;
-	padding: $medium;
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 0 $medium;
 
 	h1 {
 		color: $blue-darkened;
 		font-family: 'Concert One', sans-serif;
+		margin-bottom: $xsmall;
 		text-transform: uppercase;
+	}
+
+	.project-list {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: $medium;
+
+		@media all and (max-width: $center-projects-bp) {
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+
+	.project {
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		margin: $small;
+
+		$tile-size: 150px;
+		$border-size: 2px;
+		$frame-size: $tile-size - (2 * $border-size);
+		$spacing-size: 6px;
+
+		.preview {
+			height: $tile-size;
+			margin-bottom: $spacing-size;
+			position: relative;
+			width: $tile-size;
+
+			.frame {
+				position: absolute;
+				border: $border-size solid black;
+				height: $frame-size;
+				width: $frame-size;
+				z-index: 1; // Layer frame above image
+			}
+
+			img {
+				background-color: $yellow; // Placeholder if image is missing
+				height: 100%;
+				left: $spacing-size;
+				position: relative;
+				top: $spacing-size;
+				transition: all $timing;
+				width: 100%;
+			}
+		}
+
+		.title {
+			font: 18px $subhead-text;
+			width: fit-content;
+
+			&:after {
+				background-color: $yellow;
+				content: "";
+				display: block;
+				height: 10px;
+				margin-left: -2px; // Center highlight (see next comment)
+				margin-top: -9px;
+				transition: all $timing;
+				width: calc(100% + 4px); // Make highlight slightly wider than text
+			}
+		}
+
+		&:hover {
+			.preview img {
+				left: 0;
+				top: 0;
+			}
+
+			.title:after {
+				background-color: $grey;
+			}
+		}
 	}
 }
 
