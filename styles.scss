@@ -100,6 +100,7 @@ header {
 
 .container {
 	flex: 1; // Pushes footer to bottom of page
+	padding: $medium 0;
 }
 
 footer {
@@ -189,7 +190,6 @@ footer {
 	width: 100%;
 
 	.content {
-		padding: $medium 0;
 		text-align: center;
 		width: 500px;
 
@@ -236,6 +236,7 @@ footer {
 
 .projects {
 	max-width: 750px;
+	padding: $medium;
 
 	h1 {
 		color: $blue-darkened;
