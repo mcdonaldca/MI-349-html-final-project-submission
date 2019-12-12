@@ -7,7 +7,9 @@
 	  <link href="https://fonts.googleapis.com/css?family=Concert+One|Dosis:400,700,800|Open+Sans:400,700,800&display=swap" rel="stylesheet">
 	  <link rel="stylesheet" href="/styles.css">
 	  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	  <script src="/js/tweenmax.min.js"></script>
+	  <script src="/js/vendor/tweenmax.min.js"></script>
+	  <script src="/js/main.js"></script>
+	  <script src="/js/about.js"></script>
 	  <title>Adele McDonald</title>
 	</head>
 
@@ -984,41 +986,5 @@
 				<a href="http://www.github.com/mcdonaldca" target="blank_"><img src="/img/github.svg" alt="Twitter"></a>
 			</div>
 		</footer>
-		<script>
-			$('.moon, .sun').click(function() {
-				$('body').toggleClass('light-mode');
-				$('body').toggleClass('dark-mode');
-			});
-
-			var faceOptions = {
-			  delay: .15,
-			  repeat: -1,
-			  repeatDelay: 0.5,
-			  yoyo: true
-			};
-
-			var faceTimeline = new TimelineMax(faceOptions),
-			    faceShapes   = $('svg.face > g polygon, svg.face > g path'),
-			    faceStagger  = 0.00475,
-			    faceDuration = 1.5;
-
-			var faceStaggerFrom = {
-			  scale: 0,
-			  opacity: 0,
-			  transformOrigin: 'center center',
-			};
-
-			var faceStaggerTo = {
-			  opacity: 1,
-			  scale: 1,
-			  ease: Elastic.easeInOut
-			};
-
-			faceTimeline.staggerFromTo(faceShapes, faceDuration, faceStaggerFrom, faceStaggerTo, faceStagger, 0);
-
-			$('svg.face').click(function() {
-			  faceTimeline.isActive() ? faceTimeline.pause() : faceTimeline.play();
-			});
-		</script>
 	</body>
 </html>
