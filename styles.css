@@ -25,6 +25,7 @@ body {
   flex-direction: column;
   font-family: "Open Sans", sans-serif;
   min-height: 100vh;
+  transition: all 0.2s ease-in-out;
 }
 
 header {
@@ -33,6 +34,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 12px 24px;
+  transition: all 0.2s ease-in-out;
 }
 header .logo img {
   height: 50px;
@@ -75,7 +77,7 @@ header nav .current::after {
 .container .intro {
   color: #5C7B7F;
   font-family: "Concert One", sans-serif;
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 8px;
   text-transform: uppercase;
 }
@@ -103,6 +105,49 @@ footer .copy {
   display: inline-block;
   font-weight: bold;
   margin-right: 4px;
+}
+footer .moon,
+footer .sun {
+  cursor: pointer;
+}
+footer .moon img,
+footer .sun img {
+  height: 24px;
+  width: 24px;
+}
+footer .soc-med {
+  display: flex;
+}
+footer .soc-med a {
+  display: inline-block;
+  margin-left: 12px;
+}
+footer .soc-med img {
+  height: 24px;
+  width: 24px;
+}
+
+.dark-mode {
+  color: white;
+  background-color: black;
+}
+.dark-mode header {
+  background-color: #D95D41;
+}
+.dark-mode header nav a, .dark-mode header nav a:visited {
+  color: white;
+}
+.dark-mode header nav .option:hover a:not(.current)::after {
+  background-color: #F2DDB6;
+}
+.dark-mode header nav .current::after {
+  background-color: #85A2A6;
+}
+.dark-mode .container .intro {
+  color: #85A2A6;
+}
+.dark-mode footer {
+  border-color: #85A2A6;
 }
 
 /*# sourceMappingURL=styles.css.map */

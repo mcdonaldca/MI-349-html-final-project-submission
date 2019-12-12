@@ -6,6 +6,7 @@
 	  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	  <link href="https://fonts.googleapis.com/css?family=Concert+One|Dosis:400,700,800|Open+Sans:400,700,800&display=swap" rel="stylesheet">
 	  <link rel="stylesheet" href="/styles.css">
+	  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	  <title>Adele McDonald</title>
 	</head>
 
@@ -24,7 +25,10 @@
 		</header>
 		<div class="container">
 			<div class="intro">Hi, my name is</div>
-			<div class="name"><img src="/img/name.svg" alt="Adele"></div>	
+			<div class="name">
+				<img class="light" src="/img/name_light.svg" alt="Adele">
+				<img class="dark" src="/img/name_dark.svg" alt="Adele">
+			</div>	
 			<div class="job">&amp; I'm a software engineer</div>
 			<div class="bio">
 				I love to build websites in particular, but I'm currently intrigued by mobile apps &amp; game development. I dabble in design + photography and can't keep still (I've been to 37 countries and counting).
@@ -32,8 +36,21 @@
 		</div>
 		<footer>
 			<div><span class="copy">&copy; 2019</span> Adele McDonald</div>
-			<div><button>C</button></div>
-			<div></div>
+			<div>
+				<div class="light moon"><img src="img/moon.svg" alt="Moon"></div>
+				<div class="dark sun"><img src="img/sun.svg" alt="Sun"></div>
+			</div>
+			<div class="soc-med">
+				<a href="www.twitter.com/altoanthem" target="blank_"><img src="/img/twitter.svg" alt="Twitter"></a>
+				<a href="www.instagram.com/adele.adrift" target="blank_"><img src="/img/instagram.svg" alt="Twitter"></a>
+				<a href="www.github.com/mcdonaldca" target="blank_"><img src="/img/github.svg" alt="Twitter"></a>
+			</div>
 		</footer>
+		<script>
+			$('.moon, .sun').click(function() {
+				$('body').toggleClass('light-mode');
+				$('body').toggleClass('dark-mode');
+			});
+		</script>
 	</body>
 </html>
