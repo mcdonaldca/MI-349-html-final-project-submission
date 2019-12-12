@@ -65,7 +65,12 @@ header nav .current::after {
 
 .container {
   flex: 1;
-  padding: 24px 0;
+}
+.container h1 {
+  color: #5C7B7F;
+  font-family: "Concert One", sans-serif;
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 footer {
@@ -125,6 +130,9 @@ footer .soc-med a:first-of-type {
 .dark-mode header nav .current::after {
   background-color: #85A2A6;
 }
+.dark-mode .container h1 {
+  color: #85A2A6;
+}
 .dark-mode footer {
   border-color: #85A2A6;
 }
@@ -134,6 +142,7 @@ footer .soc-med a:first-of-type {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 24px 0;
   width: 100%;
 }
 .home .content {
@@ -171,15 +180,32 @@ footer .soc-med a:first-of-type {
 }
 
 .projects {
+  padding: 24px;
+}
+.projects .content {
   max-width: 700px;
   margin: 0 auto;
-  padding: 0 24px;
 }
-.projects h1 {
-  color: #5C7B7F;
-  font-family: "Concert One", sans-serif;
-  margin-bottom: 8px;
-  text-transform: uppercase;
+.projects.favs {
+  background-color: #D95D41;
+}
+.projects.favs h1 {
+  color: white;
+}
+.projects.favs .project .preview .frame {
+  border-color: white;
+}
+.projects.favs .project .preview img {
+  background-color: #F28444;
+}
+.projects.favs .project .title {
+  color: white;
+}
+.projects.favs .project .title:after {
+  background-color: #F28444;
+}
+.projects.favs .project:hover .title:after {
+  background-color: #5C7B7F;
 }
 .projects .project-list {
   display: flex;
@@ -243,8 +269,14 @@ footer .soc-med a:first-of-type {
   background-color: #D9CEB0;
 }
 
-.dark-mode h1 {
-  color: #85A2A6;
+.dark-mode .favs {
+  background-color: #85A2A6;
+}
+.dark-mode .favs .project .preview .frame {
+  border-color: black;
+}
+.dark-mode .favs .project .preview img {
+  background-color: #F2DDB6;
 }
 .dark-mode .project .preview .frame {
   border-color: white;
@@ -263,8 +295,54 @@ footer .soc-med a:first-of-type {
   flex-direction: row;
   justify-content: space-between;
 }
-.about .details {
+.about .photos {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  overflow: hidden;
+  width: 100%;
+}
+.about .photos a {
+  display: block;
+  min-width: 100px;
+  width: 10%;
+}
+.about .photos a img {
+  width: 100%;
+}
+.about .overview {
+  display: flex;
+  margin: 0 auto;
+  max-width: 950px;
   padding-left: 24px;
+}
+.about .overview p {
+  padding: 12px 12px 12px 0;
+}
+.about .overview a {
+  color: black;
+  display: inline-block;
+  text-decoration: none;
+}
+.about .overview a:after {
+  background-color: #F2DDB6;
+  content: "";
+  display: block;
+  height: 8px;
+  margin-top: -8px;
+  width: 100%;
+}
+.about .overview a:hover:after {
+  background-color: #D9CEB0;
+}
+@media all and (max-width: 680px) {
+  .about .overview {
+    align-items: center;
+    flex-direction: column;
+  }
+  .about .overview .face {
+    margin-top: 24px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

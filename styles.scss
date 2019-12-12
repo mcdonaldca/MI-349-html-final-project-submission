@@ -24,6 +24,7 @@ $body-text: 'Open Sans', sans-serif;
 $small-screen-bp: 500px;
 $stack-controls-bp: 360px;
 $center-projects-bp: 400px;
+$stack-about-bp: 680px;
 
 
 
@@ -101,7 +102,13 @@ header {
 
 .container {
 	flex: 1; // Pushes footer to bottom of page
-	padding: $medium 0;
+
+	h1 {
+		color: $blue-darkened;
+		font-family: 'Concert One', sans-serif;
+		margin-bottom: $xsmall;
+		text-transform: uppercase;
+	}
 }
 
 footer {
@@ -173,6 +180,8 @@ footer {
 		}
 	}
 
+	.container h1 { color: $blue; }
+
 	footer {
 		border-color: $blue;
 	}
@@ -188,6 +197,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	padding: $medium 0;
 	width: 100%;
 
 	.content {
@@ -236,15 +246,32 @@ footer {
 // Projects
 
 .projects {
-	max-width: 700px;
-	margin: 0 auto;
-	padding: 0 $medium;
+	padding: $medium;
 
-	h1 {
-		color: $blue-darkened;
-		font-family: 'Concert One', sans-serif;
-		margin-bottom: $xsmall;
-		text-transform: uppercase;
+	.content {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	&.favs {
+		background-color: $red;
+
+		h1 { color: white; }
+		.project {
+			.preview {
+				.frame { border-color: white; }
+				img { background-color: $orange; }
+			}
+			.title {
+				color: white;
+				&:after {
+					background-color: $orange;
+				}
+			}
+			&:hover .title:after {
+				background-color: $blue-darkened;
+			}
+		}
 	}
 
 	.project-list {
@@ -327,17 +354,21 @@ footer {
 // Dark mode - Projects
 
 .dark-mode {
-	h1 { color: $blue; }
+	.favs {
+		background-color: $blue;
+
+		.project {
+			.preview {
+				.frame { border-color: black; }
+				img { background-color: $yellow; }
+			}
+		}
+	}
 
 	.project {
 		.preview {
-			.frame {
-				border-color: white;
-			}
-
-			img {
-				background-color: $red;
-			}
+			.frame { border-color: white; }
+			img { background-color: $red; }
 		}
 
 		.title:after {
@@ -359,7 +390,58 @@ footer {
 	flex-direction: row;
 	justify-content: space-between;
 
-	.details {
-		padding-left: 24px;
+	.photos {
+		display: flex;
+		justify-content: center;
+		margin-bottom: $medium;
+		overflow: hidden;
+		width: 100%;
+
+		a {
+			display: block;
+			min-width: 100px;
+			width: 10%;
+
+			img { width: 100%; }
+		}
+	}
+
+	.overview {
+		display: flex;
+		margin: 0 auto;
+		max-width: 950px;
+		padding-left: $medium;
+
+		p {
+			padding: $small $small $small 0;
+		}
+
+		a {
+			color: black;
+			display: inline-block;
+			text-decoration: none;
+		
+			&:after {
+				background-color: $yellow;
+				content: "";
+				display: block;
+				height: $xsmall;
+				margin-top: -8px;
+				width: 100%;
+			}
+
+			&:hover:after {
+				background-color: $grey;
+			}
+		}
+
+		@media all and (max-width: $stack-about-bp) {
+			align-items: center;
+			flex-direction: column;
+
+			.face {
+				margin-top: $medium;
+			}
+		}
 	}
 }
