@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.light-mode .dark {
+  display: none;
+}
+
+.dark-mode .light {
+  display: none;
+}
+
+/*::selection,
+::-moz-selection {
+	background: $blue;
+}*/
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  align-items: center;
+  background-color: #F2DDB6;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+header .logo img {
+  height: 50px;
+}
+header nav {
+  display: flex;
+}
+header nav a {
+  text-decoration: none;
+}
+header nav a, header nav a:visited {
+  color: black;
+}
+header nav .option {
+  margin: 0 8px;
+}
+header nav .option:hover a:not(.current)::after {
+  background-color: white;
+  content: "";
+  display: block;
+  height: 6px;
+  width: 100%;
+}
+header nav .current::after {
+  background-color: #D95D41;
+  content: "";
+  display: block;
+  height: 6px;
+  width: 100%;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.container .intro {
+  color: #5C7B7F;
+  font-family: "Concert One", sans-serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.container .name {
+  width: 500px;
+}
+.container .job {
+  font-family: "Dosis", sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.2em;
+}
+.container .bio {
+  margin-top: 36px;
+  text-align: justify;
+  width: 500px;
+}
+
+footer {
+  border-top: 1px #D9CEB0 solid;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 12px;
+}
+footer .copy {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+/*# sourceMappingURL=styles.css.map */

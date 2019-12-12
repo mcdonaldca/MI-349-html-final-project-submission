@@ -1,0 +1,116 @@
+$red: #D95D41;
+$orange: #F28444;
+$yellow: #F2DDB6;
+$grey: #D9CEB0;
+$blue: #85A2A6;
+$blue-darkened: #5C7B7F;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.light-mode { .dark { display: none; } }
+.dark-mode { .light { display: none; } }
+
+/*::selection,
+::-moz-selection {
+	background: $blue;
+}*/
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-family: 'Open Sans', sans-serif;
+	min-height: 100vh;
+}
+
+header {
+	align-items: center;
+	background-color: $yellow;
+	display: flex;
+	justify-content: space-between;
+	padding: 12px 24px;
+
+	.logo img {
+		height: 50px;
+	}
+
+	nav {
+		display: flex;
+
+		a { text-decoration: none; }
+		a, a:visited { color: black; }
+
+		.option {
+			margin: 0 8px;
+		}
+
+		.option:hover a:not(.current)::after {
+			background-color: white;
+			content: "";
+			display: block;
+			height: 6px;
+			width: 100%;
+		}
+
+		.current::after {
+			background-color: $red;
+			content: "";
+			display: block;
+			height: 6px;
+			width: 100%;
+		}
+	}
+}
+
+.container {
+	align-items: center;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+
+	.intro {
+		color: $blue-darkened;
+		font-family: 'Concert One', sans-serif;
+		font-size: 24px;
+		margin-bottom: 8px;
+		text-transform: uppercase;
+	}
+
+	.name {
+		width: 500px;
+	}
+
+	.job {
+		font-family: 'Dosis', sans-serif;
+		font-size: 28px;
+		letter-spacing: .2em;
+	}
+
+	.bio  {
+		margin-top: 36px;
+		text-align: justify;
+		width: 500px;
+	}
+}
+
+footer {
+	border-top: 1px $grey solid;
+	display: flex;
+	justify-content: space-between;
+	padding: 24px 12px;
+
+	.copy {
+		display: inline-block;
+		font-weight: bold;
+		margin-right: 4px;
+	}
+}
