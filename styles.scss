@@ -420,6 +420,7 @@ footer {
 			color: black;
 			display: inline-block;
 			text-decoration: none;
+			transition: all $timing;
 		
 			&:after {
 				background-color: $yellow;
@@ -427,6 +428,7 @@ footer {
 				display: block;
 				height: $xsmall;
 				margin-top: -8px;
+				transition: all $timing;
 				width: 100%;
 			}
 
@@ -443,5 +445,16 @@ footer {
 				margin-top: $medium;
 			}
 		}
+	}
+}
+
+// Dark mode -- About
+
+.dark-mode {
+	.overview a {
+		color: white;
+
+		&:after { background-color: $red };
+		&:hover:after { background-color: $blue-darkened };
 	}
 }

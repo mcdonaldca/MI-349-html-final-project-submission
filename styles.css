@@ -323,6 +323,7 @@ footer .soc-med a:first-of-type {
   color: black;
   display: inline-block;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 .about .overview a:after {
   background-color: #F2DDB6;
@@ -330,6 +331,7 @@ footer .soc-med a:first-of-type {
   display: block;
   height: 8px;
   margin-top: -8px;
+  transition: all 0.2s ease-in-out;
   width: 100%;
 }
 .about .overview a:hover:after {
@@ -343,6 +345,16 @@ footer .soc-med a:first-of-type {
   .about .overview .face {
     margin-top: 24px;
   }
+}
+
+.dark-mode .overview a {
+  color: white;
+}
+.dark-mode .overview a:after {
+  background-color: #D95D41;
+}
+.dark-mode .overview a:hover:after {
+  background-color: #5C7B7F;
 }
 
 /*# sourceMappingURL=styles.css.map */
