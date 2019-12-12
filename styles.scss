@@ -141,6 +141,10 @@ footer {
 	}
 }
 
+
+
+// Dark Mode
+
 .dark-mode {
 	color: white;
 	background-color: black;
@@ -162,12 +166,36 @@ footer {
 	}
 
 	.container {
-		.intro {
+		.intro,
+		h1 {
 			color: $blue;
 		}
 	}
 
 	footer {
 		border-color: $blue;
+	}
+}
+
+
+
+// Projects
+
+.projects {
+	max-width: 750px;
+
+	h1 {
+		color: $blue-darkened;
+		font-family: 'Concert One', sans-serif;
+		text-transform: uppercase;
+	}
+}
+
+.about {
+	flex-direction: row;
+	justify-content: space-between;
+
+	.details {
+		padding-left: 24px;
 	}
 }

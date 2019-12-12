@@ -143,11 +143,29 @@ footer .soc-med img {
 .dark-mode header nav .current::after {
   background-color: #85A2A6;
 }
-.dark-mode .container .intro {
+.dark-mode .container .intro,
+.dark-mode .container h1 {
   color: #85A2A6;
 }
 .dark-mode footer {
   border-color: #85A2A6;
+}
+
+.projects {
+  max-width: 750px;
+}
+.projects h1 {
+  color: #5C7B7F;
+  font-family: "Concert One", sans-serif;
+  text-transform: uppercase;
+}
+
+.about {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.about .details {
+  padding-left: 24px;
 }
 
 /*# sourceMappingURL=styles.css.map */
