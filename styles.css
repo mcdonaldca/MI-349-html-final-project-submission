@@ -246,6 +246,18 @@ footer .soc-med a:first-of-type {
 .dark-mode h1 {
   color: #85A2A6;
 }
+.dark-mode .project .preview .frame {
+  border-color: white;
+}
+.dark-mode .project .preview img {
+  background-color: #D95D41;
+}
+.dark-mode .project .title:after {
+  background-color: #D95D41;
+}
+.dark-mode .project:hover .title:after {
+  background-color: #5C7B7F;
+}
 
 .about {
   flex-direction: row;

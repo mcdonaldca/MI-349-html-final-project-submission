@@ -328,6 +328,26 @@ footer {
 
 .dark-mode {
 	h1 { color: $blue; }
+
+	.project {
+		.preview {
+			.frame {
+				border-color: white;
+			}
+
+			img {
+				background-color: $red;
+			}
+		}
+
+		.title:after {
+			background-color: $red;
+		}
+
+		&:hover .title:after {
+			background-color: $blue-darkened;
+		}
+	}
 }
 
 
