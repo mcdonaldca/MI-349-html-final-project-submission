@@ -34,14 +34,12 @@ header {
 header .logo img {
   height: 50px;
 }
-header nav {
-  display: flex;
-}
 header nav a, header nav a:visited {
   color: black;
   text-decoration: none;
 }
 header nav .option {
+  display: inline-block;
   margin: 0 8px;
 }
 header nav .option a::after {
@@ -56,6 +54,14 @@ header nav .option:hover a:not(.current)::after {
 header nav .current::after {
   background-color: #D95D41;
 }
+@media all and (max-width: 360px) {
+  header {
+    flex-direction: column;
+  }
+  header .logo {
+    margin-bottom: 12px;
+  }
+}
 
 .container {
   flex: 1;
@@ -65,7 +71,7 @@ footer {
   border-top: 1px #D9CEB0 solid;
   display: flex;
   justify-content: space-between;
-  padding: 24px 12px;
+  padding: 24px;
 }
 footer img {
   height: 24px;
@@ -82,6 +88,24 @@ footer .moon, footer .sun {
 footer .soc-med a {
   display: inline-block;
   margin-left: 12px;
+}
+footer .soc-med a:first-of-type {
+  margin-left: 0;
+}
+@media all and (max-width: 500px) {
+  footer .moon, footer .sun {
+    display: none;
+  }
+}
+@media all and (max-width: 360px) {
+  footer {
+    align-items: center;
+    flex-direction: column;
+    padding: 12px;
+  }
+  footer .soc-med {
+    margin-top: 12px;
+  }
 }
 
 .dark-mode {
@@ -111,6 +135,18 @@ footer .soc-med a {
   justify-content: center;
   width: 100%;
 }
+.home .content {
+  padding: 24px 0;
+  text-align: center;
+  width: 500px;
+}
+@media all and (max-width: 500px) {
+  .home .content {
+    box-sizing: border-box;
+    padding: 24px 24px;
+    width: 100%;
+  }
+}
 .home .intro {
   color: #5C7B7F;
   font: 28px "Concert One", sans-serif;
@@ -118,7 +154,7 @@ footer .soc-med a {
   text-transform: uppercase;
 }
 .home .name {
-  width: 500px;
+  width: 100%;
 }
 .home .job {
   font: 28px "Dosis", sans-serif;
@@ -127,7 +163,7 @@ footer .soc-med a {
 .home .bio {
   margin-top: 36px;
   text-align: justify;
-  width: 500px;
+  width: 100%;
 }
 
 .dark-mode .intro {

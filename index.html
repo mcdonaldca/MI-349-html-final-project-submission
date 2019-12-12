@@ -7,6 +7,7 @@
 	  <link href="https://fonts.googleapis.com/css?family=Concert+One|Dosis:400,700,800|Open+Sans:400,700,800&display=swap" rel="stylesheet">
 	  <link rel="stylesheet" href="/styles.css">
 	  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	  <script src="/js/vendor/jquery.fittext.js"></script>
 	  <title>Adele McDonald</title>
 	</head>
 
@@ -24,15 +25,17 @@
 			</nav>
 		</header>
 		<div class="container home">
-			<div class="intro">Hi, my name is</div>
-			<div class="name">
-				<img class="light" src="/img/name_light.svg" alt="Adele">
-				<img class="dark" src="/img/name_dark.svg" alt="Adele">
-			</div>	
-			<div class="job">&amp; I'm a software engineer</div>
-			<p class="bio">
-				I love to build websites in particular, but I'm currently intrigued by mobile apps &amp; game development. I dabble in design + photography and can't keep still (I've been to 37 countries and counting).
-			</p>		
+			<div class="content">
+				<div class="intro">Hi, my name is</div>
+				<div class="name">
+					<img class="light" src="/img/name_light.svg" alt="Adele">
+					<img class="dark" src="/img/name_dark.svg" alt="Adele">
+				</div>	
+				<div class="job">&amp; I'm a software engineer</div>
+				<p class="bio">
+					I love to build websites in particular, but I'm currently intrigued by mobile apps &amp; game development. I dabble in design + photography and can't keep still (I've been to 37 countries and counting).
+				</p>		
+			</div>
 		</div>
 		<footer>
 			<div><span class="copy">&copy; 2019</span> Adele McDonald</div>
@@ -47,6 +50,9 @@
 			</div>
 		</footer>
 		<script>
+		  $(".intro").fitText(1.1);
+		  $(".job").fitText(1.5);
+
 			$('.moon, .sun').click(function() {
 				$('body').toggleClass('light-mode');
 				$('body').toggleClass('dark-mode');

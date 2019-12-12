@@ -21,6 +21,9 @@ $header-text: 'Concert One', sans-serif;
 $subhead-text: 'Dosis', sans-serif;
 $body-text: 'Open Sans', sans-serif;
 
+$small-screen-bp: 500px;
+$stack-controls-bp: 360px;
+
 
 
 
@@ -60,14 +63,13 @@ header {
 	}
 
 	nav {
-		display: flex;
-
 		a, a:visited { 
 			color: black; 
 			text-decoration: none;
 		}
 
 		.option {
+			display: inline-block;
 			margin: 0 $xsmall;
 		}
 
@@ -86,6 +88,14 @@ header {
 			background-color: $red;
 		}
 	}
+
+	@media all and (max-width: $stack-controls-bp) {
+		flex-direction: column;
+
+		.logo {
+			margin-bottom: $small;
+		}
+	}
 }
 
 .container {
@@ -96,7 +106,7 @@ footer {
 	border-top: 1px $grey solid;
 	display: flex;
 	justify-content: space-between;
-	padding: $medium $small;
+	padding: $medium;
 
 	img {
 		height: $icon-size;
@@ -116,6 +126,26 @@ footer {
 	.soc-med a {
 		display: inline-block;
 		margin-left: $small;
+
+		&:first-of-type {
+			margin-left: 0;
+		}
+	}
+
+	@media all and (max-width: $small-screen-bp) {
+		.moon, .sun {
+			display: none;
+		}
+	}
+
+	@media all and (max-width: $stack-controls-bp) {
+		align-items: center;
+		flex-direction: column;
+		padding: $small;
+
+		.soc-med {
+			margin-top: $small;
+		}
 	}
 }
 
@@ -158,6 +188,18 @@ footer {
 	justify-content: center;
 	width: 100%;
 
+	.content {
+		padding: $medium 0;
+		text-align: center;
+		width: 500px;
+
+		@media all and (max-width: $small-screen-bp) {
+			box-sizing: border-box;
+			padding: $medium $medium;
+			width: 100%;
+		}
+	}
+
 	.intro {
 		color: $blue-darkened;
 		font: 28px $header-text;
@@ -166,7 +208,7 @@ footer {
 	}
 
 	.name {
-		width: 500px;
+		width: 100%;
 	}
 
 	.job {
@@ -177,7 +219,7 @@ footer {
 	.bio  {
 		margin-top: $large;
 		text-align: justify;
-		width: 500px;
+		width: 100%;
 	}
 }
 
