@@ -410,6 +410,20 @@ footer .soc-med a:first-of-type {
   fill: #85A2A6;
 }
 
+.dark-mode .content a {
+  color: white;
+}
+.dark-mode .content a:after {
+  background-color: #D95D41;
+}
+.dark-mode .content a:hover:after {
+  background-color: #85A2A6;
+}
+.dark-mode .content .location .label {
+  background-color: rgba(242, 221, 182, 0.8);
+  color: black;
+}
+
 .about {
   flex-direction: row;
   justify-content: space-between;

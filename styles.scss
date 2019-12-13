@@ -529,7 +529,21 @@ footer {
 
 // Dark mode - Work
 
-.dark-mode {}
+.dark-mode {
+	.content {
+		a {
+			color: white;
+
+			&:after { background-color: $red; }
+			&:hover:after { background-color: $blue; }
+		}
+
+		.location .label {
+			background-color: rgba(242, 221, 182, .8);
+			color: black;
+		}
+	}
+}
 
 
 
