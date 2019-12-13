@@ -291,6 +291,108 @@ footer .soc-med a:first-of-type {
   background-color: #5C7B7F;
 }
 
+.work .button {
+  align-items: center;
+  color: #D95D41;
+  display: block;
+  font: 18px "Dosis", sans-serif;
+  font-weight: bold;
+  height: 50px;
+  justify-content: center;
+  margin: 24px auto 30px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 180px;
+}
+.work .button .frame {
+  border: 2px #D95D41 solid;
+  box-sizing: border-box;
+  height: 50px;
+  position: absolute;
+  width: 180px;
+  z-index: 1;
+}
+.work .button .button-content {
+  align-items: center;
+  background-color: #F2DDB6;
+  box-sizing: border-box;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  left: 6px;
+  padding-bottom: 6px;
+  position: relative;
+  top: 6px;
+  transition: all 0.2s ease-in-out;
+  width: 180px;
+}
+.work .button:hover .button-content {
+  left: 0;
+  padding-bottom: 0;
+  top: 0;
+}
+.work h2 {
+  font: 24px "Dosis", sans-serif;
+  font-weight: bold;
+}
+.work h2 .details {
+  display: inline-block;
+  font: 16px "Open Sans", sans-serif;
+  margin-left: 8px;
+}
+.work h3 {
+  font: 16px "Open Sans", sans-serif;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.work p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.work .content {
+  margin: 0 auto;
+  max-width: 950px;
+  padding: 0 24px;
+}
+.work .content .section {
+  border-top: 1px #D9CEB0 solid;
+  padding: 24px 0;
+}
+.work .content .section .row {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.work .content .location {
+  position: relative;
+}
+.work .content .location .label {
+  bottom: 0;
+  font-weight: bold;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  width: fit-content;
+}
+.work .content .location .label:after {
+  background-color: #F2DDB6;
+  content: "";
+  display: block;
+  height: 10px;
+  margin-left: -4px;
+  margin-top: -12px;
+  width: calc(100% + 8px);
+}
+.work .content .location img {
+  width: 200px;
+}
+.work .content .location .state {
+  fill: #85A2A6;
+}
+
 .about {
   flex-direction: row;
   justify-content: space-between;

@@ -6,6 +6,7 @@ $yellow: #F2DDB6;
 $grey: #D9CEB0;
 $blue: #85A2A6;
 $blue-darkened: #5C7B7F;
+$black: #151515;
 
 $timing: .2s ease-in-out;
 
@@ -380,6 +381,136 @@ footer {
 		}
 	}
 }
+
+
+
+
+// Work
+
+.work {
+	.button { 
+		align-items: center;
+		color: $red;
+		display: block;
+		font: 18px $subhead-text;
+		font-weight: bold;
+		height: 50px;
+		justify-content: center;
+		margin: $medium auto 30px;
+		position: relative;
+		text-decoration: none;
+		text-transform: uppercase;
+		width: 180px;
+
+		.frame {
+			border: 2px $red solid;
+			box-sizing: border-box;
+			height: 50px;
+			position: absolute;
+			width: 180px;
+			z-index: 1;
+		}
+
+		.button-content {
+			align-items: center;
+			background-color: $yellow;
+			box-sizing: border-box;
+			display: flex;
+			height: 50px;
+			justify-content: center;
+			left: 6px;
+			padding-bottom: 6px;
+			position: relative;
+			top: 6px;
+			transition: all $timing;
+			width: 180px;
+		}
+
+		&:hover {
+			.button-content {
+				left: 0;
+				padding-bottom: 0;
+				top: 0;
+			}
+		}
+	}
+
+	h2 {
+		font: 24px $subhead-text;
+		font-weight: bold;
+
+		.details {
+			display: inline-block;
+			font: 16px $body-text;
+			margin-left: $xsmall;
+		}
+	}
+
+	h3 {
+		font: 16px $body-text;
+		font-weight: bold;
+		margin-bottom: $xsmall;
+	}
+
+	p {
+		font-size: 14px;
+		margin-bottom: $xsmall;
+	}
+
+	.content {
+		margin: 0 auto;
+		max-width: 950px;
+		padding: 0 $medium;
+
+		.section {
+			border-top: 1px $grey solid;
+			padding: $medium 0;
+
+			.row {
+				align-items: flex-start;
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: $small;
+			}
+		}
+
+		.location {
+			position: relative;
+
+			.label {
+				bottom: 0;
+				font-weight: bold;
+				left: 0;
+				margin: auto;
+				position: absolute;
+				right: 0;
+				width: fit-content;
+
+				&:after {
+					background-color: $yellow;
+					content: "";
+					display: block;
+					height: 10px;
+					margin-left: -4px;
+					margin-top: -12px;
+					width: calc(100% + 8px);
+				}
+			}
+
+			img {
+				width: 200px;
+			}
+
+			.state {
+				fill: $blue;
+			}
+		}
+	}
+}
+
+// Dark mode - Work
+
+.dark-mode {}
 
 
 
