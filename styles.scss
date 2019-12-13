@@ -22,9 +22,10 @@ $header-text: 'Concert One', sans-serif;
 $subhead-text: 'Dosis', sans-serif;
 $body-text: 'Open Sans', sans-serif;
 
-$small-screen-bp: 500px;
 $stack-controls-bp: 360px;
 $center-projects-bp: 400px;
+$small-screen-bp: 500px;
+$hide-location-bp: 650px;
 $stack-about-bp: 680px;
 
 
@@ -419,7 +420,8 @@ footer {
 			height: 50px;
 			justify-content: center;
 			left: 6px;
-			padding-bottom: 6px;
+			padding-bottom: 12px;
+			padding-right: 12px;
 			position: relative;
 			top: 6px;
 			transition: all $timing;
@@ -430,6 +432,7 @@ footer {
 			.button-content {
 				left: 0;
 				padding-bottom: 0;
+				padding-right: 0;
 				top: 0;
 			}
 		}
@@ -474,27 +477,43 @@ footer {
 			}
 		}
 
+		a {
+			color: black;
+			display: inline-block;
+			text-decoration: none;
+
+			&:after {
+				background-color: $yellow;
+				content: "";
+				display: block;
+				height: 8px;
+				margin-top: -8px;
+				width: 100%;
+			}
+
+			&:hover:after {
+				background-color: $grey;
+			}
+		}
+
 		.location {
 			position: relative;
 
+			@media all and (max-width: $hide-location-bp) {
+				display: none;
+			}
+
 			.label {
+				background-color: rgba(0, 0, 0, .5);
 				bottom: 0;
+				color: white;
 				font-weight: bold;
 				left: 0;
 				margin: auto;
+				padding: 0 $tiny;
 				position: absolute;
 				right: 0;
 				width: fit-content;
-
-				&:after {
-					background-color: $yellow;
-					content: "";
-					display: block;
-					height: 10px;
-					margin-left: -4px;
-					margin-top: -12px;
-					width: calc(100% + 8px);
-				}
 			}
 
 			img {

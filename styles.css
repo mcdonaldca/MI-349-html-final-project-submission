@@ -321,7 +321,8 @@ footer .soc-med a:first-of-type {
   height: 50px;
   justify-content: center;
   left: 6px;
-  padding-bottom: 6px;
+  padding-bottom: 12px;
+  padding-right: 12px;
   position: relative;
   top: 6px;
   transition: all 0.2s ease-in-out;
@@ -330,6 +331,7 @@ footer .soc-med a:first-of-type {
 .work .button:hover .button-content {
   left: 0;
   padding-bottom: 0;
+  padding-right: 0;
   top: 0;
 }
 .work h2 {
@@ -365,26 +367,41 @@ footer .soc-med a:first-of-type {
   justify-content: space-between;
   margin-bottom: 12px;
 }
-.work .content .location {
-  position: relative;
+.work .content a {
+  color: black;
+  display: inline-block;
+  text-decoration: none;
 }
-.work .content .location .label {
-  bottom: 0;
-  font-weight: bold;
-  left: 0;
-  margin: auto;
-  position: absolute;
-  right: 0;
-  width: fit-content;
-}
-.work .content .location .label:after {
+.work .content a:after {
   background-color: #F2DDB6;
   content: "";
   display: block;
-  height: 10px;
-  margin-left: -4px;
-  margin-top: -12px;
-  width: calc(100% + 8px);
+  height: 8px;
+  margin-top: -8px;
+  width: 100%;
+}
+.work .content a:hover:after {
+  background-color: #D9CEB0;
+}
+.work .content .location {
+  position: relative;
+}
+@media all and (max-width: 650px) {
+  .work .content .location {
+    display: none;
+  }
+}
+.work .content .location .label {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  color: white;
+  font-weight: bold;
+  left: 0;
+  margin: auto;
+  padding: 0 4px;
+  position: absolute;
+  right: 0;
+  width: fit-content;
 }
 .work .content .location img {
   width: 200px;
