@@ -7,7 +7,6 @@
 	  <link href="https://fonts.googleapis.com/css?family=Concert+One|Dosis:400,700,800|Open+Sans:400,700,800&display=swap" rel="stylesheet">
 	  <link rel="stylesheet" href="/styles.css">
 	  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	  <script src="/js/vendor/jquery.fittext.js"></script>
 	  <script src="/js/main.js"></script>
 	  <title>Adele McDonald</title>
 	</head>
@@ -21,24 +20,14 @@
 				</div>
 			</a>
 			<nav>
-				<div class="option"><a href="/" class="current">home</a></div>
-				<div class="option"><a href="/projects">projects</a></div>
+				<div class="option"><a href="/">home</a></div>
+				<div class="option"><a href="/projects" class="current">projects</a></div>
 				<div class="option"><a href="/work">work</a></div>
 				<div class="option"><a href="/about">about</a></div>
 			</nav>
 		</header>
-		<div class="container home">
-			<div class="content">
-				<div class="intro">Hi, my name is</div>
-				<div class="name">
-					<img class="light" src="/img/name_light.svg" alt="Adele">
-					<img class="dark" src="/img/name_dark.svg" alt="Adele">
-				</div>	
-				<div class="job">&amp; I'm a software engineer</div>
-				<p class="bio">
-					I love to build websites in particular, but I'm currently intrigued by mobile apps &amp; game development. I dabble in design + photography and can't keep still (I've been to 37 countries and counting).
-				</p>		
-			</div>
+		<div class="project-page container">
+			<h1>Example project page</h1>
 		</div>
 		<footer>
 			<div><span class="copy">&copy; 2019</span> Adele McDonald</div>
@@ -52,9 +41,5 @@
 				<a href="http://www.github.com/mcdonaldca" target="blank_"><img src="/img/github.svg" alt="Twitter"></a>
 			</div>
 		</footer>
-		<script>
-		  $(".intro").fitText(1.1, {maxFontSize: '28px'});
-		  $(".job").fitText(1.5), {maxFontSize: '28px'};
-		</script>
 	</body>
 </html>
